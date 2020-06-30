@@ -1,5 +1,34 @@
 .App {
   text-align: center;
+  background-color:rgb(62, 100, 255);
+  display: flex;
+  flex-direction: column;
+
+height:100vh;
+
+}
+.header{
+height:20vh;
+width:100%;
+ font-family: 'Permanent Marker', cursive;
+color:white;
+font-size:7vh;
+}
+p{
+  color:white;
+  font-size:2vh;
+  font-family: 'Press Start 2P', cursive; 
+}
+input{
+  height: 5vh;
+  width:40%;
+  border-radius: 7px;
+}
+.inputer{
+  margin-top:30px;
+}
+.qr{
+  margin:180px 0px 0px 50px;
 }
 
 .App-logo {

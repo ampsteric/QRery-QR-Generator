@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Input from './component/input';
+import  QRCode from 'qrcode.react';
 import './App.css';
 
-function App() {
+class App extends Component {
+  state={
+    text:"",
+  }
+  changeHandler=(e)=>{
+    e.preventDefault();
+
+    var inp=e.target.value;
+    this.setState({
+     text:inp
+    });
+  }
+  
+
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+              <h1>QRery.</h1>
+              </div>
+            <div className="qr">
+        <QRCode value={this.state.text} />
+        </div>
+
+          <div className="inputer">
+          <Input change={this.changeHandler}/>
+          </div>
+
+
+          <div>
+            <p>Grab a screen-shot of the QR-code!</p>
+            </div>
+
+ 
     </div>
   );
-}
+};
+  };
 
 export default App;
